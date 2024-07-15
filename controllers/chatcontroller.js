@@ -1,7 +1,6 @@
 const { chatmodel } = require("../models/chatdb");
 
 // posting data to the database
-
 const postingchat = async (req, res) => {
   try {
     // checking if they were empty or not
@@ -18,7 +17,6 @@ const postingchat = async (req, res) => {
     };
 
     // cretaing the data and putting into mongodb
-
     const chatdata = await chatmodel.create(newchat);
     // Send success response
     res.status(200).send({
@@ -32,7 +30,6 @@ const postingchat = async (req, res) => {
 };
 
 //getting data from the database
-
 const gettingchat = async (req, res) => {
   const chat = await chatmodel.find();
 
