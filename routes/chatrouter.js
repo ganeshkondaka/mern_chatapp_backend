@@ -4,6 +4,6 @@ const chat_router = express.Router();
 
 // creating routes
 chat_router.get("/ok", gettingchat);
-chat_router.get("/postchat", postingchat);
+chat_router.post("/postchat", postingchat);
 
 module.exports = { chat_router };
