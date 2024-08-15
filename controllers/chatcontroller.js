@@ -29,13 +29,4 @@ const postingchat = async (req, res) => {
   }
 };
 
-//getting data from the database
-const gettingchat = async (req, res) => {
-  const chat = await chatmodel.find();
-
-  res.send({
-    chat,
-  });
-};
-
-module.exports = { postingchat, gettingchat };
+module.exports={postingchat}
