@@ -4,8 +4,8 @@ const signup_validation = (req, res, next) => {
 
   const myschema = z.object({
     username: z.string().min(1), // no need of using 'required'
-    email: z.tring().email({ message: "Invalid email address from zod du" }),
-    password: z.string().password(),
+    email: z.string().email({ message: "Invalid email address from zod du" }),
+    password: z.string().min(5),
   });
   const { error } = myschema.safeParse(req.body);
   if (error) {
@@ -18,10 +18,10 @@ const signup_validation = (req, res, next) => {
 };
 
 const login_validation = (req, res, next) => {
-    
+
   const myschema = z.object({
-    email: z.tring().email({ message: "Invalid email address from zod du" }),
-    password: z.string().password(),
+    email: z.string().email({ message: "Invalid email address from zod du" }),
+    password: z.string().min(5),
   });
   const { error } = myschema.safeParse(req.body);
   if (error) {
