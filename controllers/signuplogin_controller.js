@@ -51,8 +51,8 @@ const login = async (req, res) => {
     }
 
     // const ispasswordequal = await bcrypt.compare(password, user.password);
-    ispasswordequal = password == user.password;
-    if (ispasswordequal === false) {
+    ispasswordequal = (password == user.password);
+    if (ispasswordequal == false) {
       return res.status(403).json({
         msg: "the email or password is wrong",
       });
@@ -65,6 +65,7 @@ const login = async (req, res) => {
     );
     res.status(200).json({
       msg: "login successfull",
+      success:true,
       jwttoken,
       email,
       name: user.username,
