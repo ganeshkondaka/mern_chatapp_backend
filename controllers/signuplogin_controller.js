@@ -65,7 +65,7 @@ const login = async (req, res) => {
     );
     res.status(200).json({
       msg: "login successfull",
-      success:true,
+      success: true,
       jwttoken,
       email,
       name: user.username,
